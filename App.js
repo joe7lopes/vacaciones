@@ -1,13 +1,22 @@
 import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Profile from './components/profile/Profile';
 import MyCallendar from './components/MyCallendar';
-import Main from './components/Main';
+import Events from './components/events/Events';
+import NewEvent from './components/events/NewEvent';
+import SearchFriends from './components/events/SearchFriends';
+
+const EventsStack = StackNavigator({
+  Events: { screen: Events },
+  NewEvent: { screen: NewEvent },
+  SearchFriends: { screen: SearchFriends }
+});
+
 
 export default App = TabNavigator (
   { 
-    Main: {screen: Main},
+    Events: {screen: EventsStack},
     MyCallendar: {screen: MyCallendar},
     Profile: {screen: Profile}
   },
@@ -20,8 +29,8 @@ export default App = TabNavigator (
           iconName = `ios-contact${focused ? '' : '-outline'}`;
         }else if(routeName === 'MyCallendar'){
           iconName = `ios-calendar${focused ? '' : '-outline'}`;
-        }else if(routeName === 'Main'){
-          iconName = `ios-people${focused ? '' : '-outline'}`;
+        }else if(routeName === 'Events'){
+          iconName = `ios-clipboard${focused ? '' : '-outline'}`;
         }
 
         return <Ionicons name={iconName} size={25} color={tintColor} />;
@@ -35,5 +44,5 @@ export default App = TabNavigator (
 );
 
 
-
+// export default App = SearchFriends;
 
