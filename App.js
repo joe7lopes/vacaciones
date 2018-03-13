@@ -1,12 +1,12 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Profile from './components/Profile';
+import Profile from './components/profile/Profile';
 import MyCallendar from './components/MyCallendar';
 import Main from './components/Main';
 
 export default App = TabNavigator (
-  {
+  { 
     Main: {screen: Main},
     MyCallendar: {screen: MyCallendar},
     Profile: {screen: Profile}
