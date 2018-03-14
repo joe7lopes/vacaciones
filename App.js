@@ -37,7 +37,7 @@ const App = TabNavigator(
       },
     }),
     tabBarOptions: {
-      activeTintColor: 'green',
+      activeTintColor: 'gray',
       inactiveTintColor: 'gray'
     }
   }
@@ -46,4 +46,3 @@ const App = TabNavigator(
 export default App;
 
 // export default App = SearchFriends;
-
