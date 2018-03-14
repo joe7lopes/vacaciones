@@ -23,7 +23,7 @@ class NewEvent extends React.Component {
     };
 
     onInviteFriendsClicked(){
-        this.props.navigation.navigate('SearchFriends');
+        this.props.navigation.navigate('SearchContact');
     }
 
     onCreateClicked(){
