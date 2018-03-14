@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Button, FlatList } from 'react-native';
-import { FONT_SIZE_TEXT, FONT_SIZE_TITLE } from '../../styles/style';
-import SearchContactDetail from './SearchContactDetail';
+import { FONT_SIZE_TEXT, FONT_SIZE_TITLE } from '../../../styles/style';
+import SearchFriendsDetail from './SearchFriendsDetail';
 
 class SearchFriends extends React.Component {
     constructor(){
@@ -14,9 +14,9 @@ class SearchFriends extends React.Component {
 
     componentDidMount(){
         let contacts = [
-            {key:1, name: 'jhon', img:'avatar'},
-            {key:2, name: 'Martin', img:'avatar'},
-            {key:3, name: 'Sophie', img:'avatar'}
+            {key:1, name: 'jhon', image:'avatar'},
+            {key:2, name: 'Martin', image:'avatar'},
+            {key:3, name: 'Sophie', image:'avatar'}
         ];
 
         this.setState({contacts});
@@ -39,7 +39,7 @@ class SearchFriends extends React.Component {
                 <FlatList
                     contentContainerStyle={styles.contactList} 
                     data={this.state.contacts}
-                    renderItem={ ({item})=> <SearchContactDetail name={item.name} image={item.image} selected={false} />}
+                    renderItem={ ({item})=> <SearchFriendsDetail name={item.name} image={item.image} checked={false}/>}
                 />
             </View>
         )
