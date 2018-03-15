@@ -6,6 +6,7 @@ import MyCallendar from './components/MyCallendar';
 import Events from './components/events/Events';
 import NewEvent from './components/events/NewEvent';
 import SearchContact from './components/events/searchContact/SearchContact';
+import Settings from './components/Settings';
 
 const EventsStack = StackNavigator({
   Events: { screen: Events },
@@ -18,7 +19,8 @@ const App = TabNavigator(
   {
     Events: { screen: EventsStack },
     MyCallendar: { screen: MyCallendar },
-    Profile: { screen: Profile }
+    Profile: { screen: Profile },
+    Settings: { screen: Settings }
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -43,6 +45,6 @@ const App = TabNavigator(
   }
 );
 
-export default App;
+// export default App;
 
-// export default App = SearchFriends;
+export default App = Settings;
