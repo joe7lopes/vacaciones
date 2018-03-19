@@ -7,12 +7,7 @@ import {
   Dimensions
 } from 'react-native';
 
-import {
-  FONT_SIZE_TITLE,
-  FONT_SIZE_TEXT,
-  COLOR_PRIMARY
-} from '../../styles/style';
-
+import { COLOR_PRIMARY } from '../../styles/style';
 import EventCard from './EventCard';
 
 class Events extends React.Component {
@@ -20,15 +15,22 @@ class Events extends React.Component {
 
     state = {
       events: [
-        { key: 1, title: 'Trip to ibiza', createdAt: 0 },
-        { key: 2, title: 'Coffee', createdAt: 0 },
-        { key: 3, title: 'Visit Grandma', createdAt: 0 },
+        { id: 1, title: 'Trip to ibiza', createdAt: 0 },
+        { id: 2, title: 'Coffee', createdAt: 0 },
+        { id: 3, title: 'Visit Grandma', createdAt: 0 },
       ]
     }
 
     renderEvents() {
       const { events } = this.state;
-      return events.map(event => <EventCard style={styles.eventBox} title={event.title} createdAt={event.createdAt} />);
+      return events.map(event => (
+        <EventCard
+          key={event.id}
+          style={styles.eventBox}
+          title={event.title}
+          createdAt={event.createdAt}
+        />
+      ));
     }
 
     render() {
@@ -47,7 +49,6 @@ class Events extends React.Component {
       );
     }
 }
-
 
 const { width } = Dimensions.get('window');
 const padding = width / 20;
