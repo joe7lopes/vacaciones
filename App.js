@@ -1,11 +1,10 @@
 import React from 'react';
-import SignIn from './components/auth/SignIn';
-
+import EventCard from './components/events/EventCard';
 // import { TabNavigator, StackNavigator } from 'react-navigation';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 // import Profile from './components/profile/Profile';
 // import MyCallendar from './components/MyCallendar';
-// import Events from './components/events/Events';
+import Events from './components/events/Events';
 // import NewEvent from './components/events/NewEvent';
 // import SearchContact from './components/events/searchContact/SearchContact';
 // import Settings from './components/Settings';
@@ -49,4 +48,4 @@ import SignIn from './components/auth/SignIn';
 
 // export default App;
 
-export default App = SignIn;
+export default App = Events;

@@ -1,70 +1,78 @@
 import React from 'react';
 import {
+  SafeAreaView,
   View,
-  Text,
   Button,
   StyleSheet,
-  FlatList
+  Dimensions
 } from 'react-native';
 
-import { FONT_SIZE_TITLE, FONT_SIZE_TEXT } from '../../styles/style';
+import {
+  FONT_SIZE_TITLE,
+  FONT_SIZE_TEXT,
+  COLOR_PRIMARY
+} from '../../styles/style';
+
+import EventCard from './EventCard';
 
 class Events extends React.Component {
     static navigationOptions = { header: null };
 
     state = {
-      plans: [
-        { key: 'Trip to ibiza' },
-        { key: 'Coffee' },
-        { key: 'Visit Grandma' },
+      events: [
+        { key: 1, title: 'Trip to ibiza', createdAt: 0 },
+        { key: 2, title: 'Coffee', createdAt: 0 },
+        { key: 3, title: 'Visit Grandma', createdAt: 0 },
       ]
     }
 
-    renderPlan(plan) {
-      return (
-        plan ? <Text style={styles.planDetail}>{plan.key}</Text> : <Text> No Plans </Text>
-      );
+    renderEvents() {
+      const { events } = this.state;
+      return events.map(event => <EventCard style={styles.eventBox} title={event.title} createdAt={event.createdAt} />);
     }
 
     render() {
       return (
-        <View style={styles.container}>
-          <Text style={styles.title}>Events</Text>
-          <FlatList
-            contentContainerStyle={styles.plansList}
-            data={this.state.plans}
-            renderItem={({ item }) => this.renderPlan(item)}
-          />
-          <View style={styles.createPlanButton}>
+        <SafeAreaView style={styles.container}>
+          <View style={styles.header}>
             <Button
               title="Create new Event"
               onPress={() => this.props.navigation.navigate('NewEvent')}
             />
           </View>
-        </View>
+          <View style={styles.eventsContainer}>
+            {this.renderEvents()}
+          </View>
+        </SafeAreaView>
       );
     }
 }
 
+
+const { width } = Dimensions.get('window');
+const padding = width / 20;
+const boxSize = (width / 2) - 22;
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  header: {
     flex: 1,
-    marginTop: 75,
+    justifyContent: 'flex-end',
+    backgroundColor: COLOR_PRIMARY
   },
-  title: {
-    textAlign: 'center',
-    fontSize: FONT_SIZE_TITLE
-  },
-  createPlanButton: {
+  eventsContainer: {
+    flex: 3,
     flexDirection: 'row',
-    justifyContent: 'flex-end'
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    padding
   },
-  plansList: {
-    borderWidth: 0.5,
-    borderColor: 'black'
-  },
-  planDetail: {
-    fontSize: FONT_SIZE_TEXT
+  eventBox: {
+    height: boxSize,
+    width: boxSize,
+    marginTop: 8
   }
 });
 
