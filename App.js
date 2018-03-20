@@ -4,8 +4,7 @@ import EventCard from './components/events/EventCard';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 // import Profile from './components/profile/Profile';
 // import MyCallendar from './components/MyCallendar';
-import Events from './components/events/Events';
-import NewEvent from './components/events/newEvent/NewEvent';
+import Event from './components/events/event/Event';
 // import SearchContact from './components/events/searchContact/SearchContact';
 // import Settings from './components/Settings';
 
@@ -48,4 +47,4 @@ import NewEvent from './components/events/newEvent/NewEvent';
 
 // export default App;
 
-export default App = NewEvent;
+export default App = Event;
