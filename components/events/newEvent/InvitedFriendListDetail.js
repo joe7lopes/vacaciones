@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { View, Text, StyleSheet } from 'react-native';
-import { FONT_SIZE_TEXT } from '../../styles/style';
+import { FONT_SIZE_TEXT } from '../../../styles/style';
 
 const InvitedFriendListDetail = ({ name }) => (
     <View style={styles.container}>

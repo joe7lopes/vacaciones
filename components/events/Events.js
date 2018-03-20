@@ -51,7 +51,6 @@ class Events extends React.Component {
 }
 
 const { width } = Dimensions.get('window');
-const padding = width / 20;
 const boxSize = (width / 2) - 22;
 
 const styles = StyleSheet.create({
@@ -67,13 +66,12 @@ const styles = StyleSheet.create({
     flex: 3,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    padding
+    padding: 20
   },
   eventBox: {
     height: boxSize,
     width: boxSize,
-    marginTop: 8
+    padding: 5
   }
 });
 

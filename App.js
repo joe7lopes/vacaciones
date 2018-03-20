@@ -5,7 +5,7 @@ import EventCard from './components/events/EventCard';
 // import Profile from './components/profile/Profile';
 // import MyCallendar from './components/MyCallendar';
 import Events from './components/events/Events';
-// import NewEvent from './components/events/NewEvent';
+import NewEvent from './components/events/newEvent/NewEvent';
 // import SearchContact from './components/events/searchContact/SearchContact';
 // import Settings from './components/Settings';
 
@@ -48,4 +48,4 @@ import Events from './components/events/Events';
 
 // export default App;
 
-export default App = Events;
+export default App = NewEvent;
