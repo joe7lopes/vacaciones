@@ -17,6 +17,7 @@ class NewEvent extends React.Component {
       startDate: moment(),
       endDate: moment(),
       location: undefined,
+      description: undefined,
       people: [
         { id: 1, name: 'albert' },
         { id: 2, name: 'Jhon' },
@@ -96,7 +97,7 @@ class NewEvent extends React.Component {
           <View style={styles.eventDetailsContainer}>
 
             <View style={styles.eventDetailsRow}>
-              <Ionicons name="ios-people" size={iconsStyle.size} />
+              <Ionicons name="ios-people-outline" size={iconsStyle.size} />
               <TextInput
                 style={styles.eventName}
                 placeholder="Event Name"
@@ -110,12 +111,21 @@ class NewEvent extends React.Component {
               {this.renderEventDateView()}
             </View>
             <View style={styles.eventDetailsRow}>
-              <Ionicons name="ios-pin" size={iconsStyle.size} />
+              <Ionicons name="ios-pin-outline" size={iconsStyle.size} />
               <TextInput
                 style={styles.locationTextInput}
                 placeholder="Location"
                 value={this.state.location}
                 onChangeText={location => this.setState({ location })}
+              />
+            </View>
+            <View style={styles.eventDetailsRow}>
+              <Ionicons name="ios-paper-outline" size={iconsStyle.size} />
+              <TextInput
+                style={styles.descriptionTextInput}
+                placeholder="Description"
+                value={this.state.description}
+                onChangeText={description => this.setState({ description })}
               />
             </View>
           </View>
@@ -147,7 +157,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   eventDetailsContainer: {
-    flex: 1.5,
+    flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLOR_PRIMARY
@@ -184,6 +194,13 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     fontSize: FONT_SIZE_TEXT
+  },
+  descriptionTextInput: {
+    flex: 1,
+    height: 100,
+    fontSize: FONT_SIZE_TEXT,
+    textAlign: 'left',
+    paddingLeft: 10
   }
 });
 
